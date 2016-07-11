@@ -1,0 +1,119 @@
+Different solutions for Knapsack problem
+
+1) Brute force:
+
+iterative approach:
+
+Keyword:
+
+KPLC:
+
+K-knapsack, P-powerset, L-loop over the powerset, C- Check conditions
+
+Logic:
+
+create a knapsack list, then create best_value=0 and best_weight=0,
+then calculate the powerset(ppba or pbd) and then run a loop over 
+powerset and then create set_value and set_weight and set them to zero and run
+loop over the list and calculate set_weight=set_weight+list.weight(), similarly value.
+Then check if set_weight<=capacity and set_value>best_value, then update best_value, best_weight and knapsack
+
+
+
+Recursive approach:
+
+Keyword:
+
+4B:
+4-parameters, b- base case
+
+logic:
+
+function_name(int noOfItems, int wt[], int[] val, int capacity)
+base case: if(noOfItems || capacit==0)
+              return 0;
+           if(wt[noOfItems-1]<=capacity)
+              return math.max(val[items-1]+functin_name(items-1,wt,val,capacity-wt[items-1]),function_name(items-1,wt,val,capacity))
+            else
+              return function_name(items-1,wt,val,capacity)
+
+u can only the max_value using this method, whereas iterative method gives even the sublist which gives max value.
+
+Both take O(2^n) time 
+
+
+
+2) DP
+
+in iterative method, the subproblems are calculated repeatedly, overlapping subproblem, what dp does is it saves the solved problems and when they 
+occur again, they are not calculated, but retrieved 
+
+So a two dimensional array is used to save the solved subproblems
+
+THe DP follows a bottom up approach, means the subproblems are solved first and then the main problem is obtained from the subproblem
+
+Keyword:
+2b2l:
+
+2-base cases, 2- loops: but not recursive
+
+Logic:
+
+Create a knapsack array:[noofitems+1][capacity+1]
+
+then first base case is, if the capacity is zero, then irrespective of the items, the knapsack is gng to be zero, so populate the table
+second base case is, if the items is zero, irrespective of weights the knapsack is zero. populate 
+
+then run a loop from 0 to <=items
+then a loop from 0 to <=weights
+check if weight[j]<=capacity
+  then knapsack[][]=max(val[items-1]+knapsack[items-1][weight-wt[items-1]],knapsack[items-1][weight]
+ else
+   knapsack[][]=knapsack[items-1][weight]
+
+then max_value= knapsack[nofoitems][capacity]
+
+
+TIME COMPLEXITY: O(mn)
+
+
+3) Greedy Algorithm (FRACTIONAL KNAPSACK Problem)
+
+  ST: sort and update taken array
+
+LOGIC:
+
+  Given two arrays , wt and val
+
+  first sort the given input arrays using any sorting mechanism using the val/weight ratio, the highest is kept first
+
+  example sorting:
+
+   run a loop from 0 to size of weights
+   then run a loop from 1 to size-i
+     calc x=val[j-1]/wt[j-1]
+          y=val[j]/wt[j]
+     if(x<=y)
+       then swap j-1 and j in both wt and val
+  
+  sorting done
+
+  then in greedy solver
+     call sort
+     then populate taken array with zero
+
+     then run another loop from 0 t size of profit
+      and check if weight[i]<=capacity
+      if so  taken[i]=1
+             cap=cap-weight[i]
+         else
+            break
+
+      if(i<wt.size)
+           taken[i]=cap/weight[i]
+
+    then return taken 
+
+ 
+
+ 

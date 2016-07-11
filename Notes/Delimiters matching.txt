@@ -1,0 +1,32 @@
+Delimiters matching:
+
+
+Keyword:
+
+FES:
+
+For Each Switch
+
+Running time: O(n)
+
+Logic:
+
+
+The string is passed as arguemnt 
+then run a loop for the length of the string, take each element and check for conditions
+
+if '[' or '{' or '('--then push into the stack
+
+if ']''}'')' ---- then check if stack is not empty, if so ,then pop an element from the stack 
+and check if 
+
+the braces of the popped element and index element are matching, if not mismatch
+
+if the stack is empty, then error, as the closing brace doesnt have a opening brace
+
+all other charcters are handled in default case
+
+then after the for loop is done, if the stack is not empty, then there is error, as there 
+are some left over opening braces which dont have a closing brace
+
+

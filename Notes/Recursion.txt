@@ -1,0 +1,92 @@
+Recursion:
+
+features:
+
+calls itself
+calls itself to decrease the size of the problem
+has a base case which returns the value without calling itself
+
+
+Efficient:
+
+Not so,
+
+has an overhead.
+the control has to be passed from location of the call to the start of the method, when a call is made. 
+and also the arguments assocaited with the method and the return address has to be saved in an internal stack, so that
+the method knows the arguments and the address to which it has to return the values
+
+and also
+
+it uses extra memory for storing the arguments and address to which the method has to return 
+
+
+
+Triangular number:
+
+a number which is the sum of itself and all the previous numbers
+
+for example 1== 1+0
+for example 2== 2+1+0
+for example 3=  3+2+1+0
+
+so code for it is 
+non-recursive
+
+total=0;
+while(n>0)
+{
+ total = total+n
+ n--;
+}
+
+
+recursive one:
+
+base case:
+
+if(n==1)
+  return 1;
+else
+  return n+triangle(n-1);
+
+
+
+
+
+Factorial:
+
+Similar to triangular numbers, but multiply not addition
+
+non-recursive:
+
+total=1;
+while(n>0)
+total=total*n;
+n--;
+
+recursive:
+
+if(n==0)
+  return 1;
+return n*triangle(n-1)
+
+
+GCD:
+
+Euclid algorithm:
+
+base case:
+when q==0,
+return p;
+
+else
+ p=q,
+ q=p%q
+
+so recursive code is:
+
+  if(q==0)
+    return p;
+ return euclid(q,p%q)
+

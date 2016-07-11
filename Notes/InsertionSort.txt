@@ -1,0 +1,21 @@
+Running time
+
+O(n2)
+
+best when sorted
+worst when reverse sorted
+
+Keyword: ICKR
+I-insertion,C-card,K-key,R-Replace
+
+Logic:
+
+Run loop from second element to last element
+Set key as second element
+and I as one less than key index
+then check if I greater than or equal to zero and arr[i] greater than key
+then replace arr[i+1] with arr[i]
+and decrease I
+
+At last replace arr[i+1] with key
+

@@ -1,0 +1,36 @@
+Binary Tips:
+
+Positive numbers:
+
+0- 0000
+1- 0001
+2- 0010
+3- 0011
+4- 0100
+
+negative numbers:
+
+-1 == positive 1+ flip over the bits+add 1: give the representation of -1== 0001+ 1110 + (1110+1)--- 1111
+-2 == postive 2 (0010) + (1101) + add 1 (1101+1) ==1110
+
+now conversion from positive to negative:
+
+-4: negative compliment +1 ==  0100+1 =0101=-4
+
+1010: negative integer is: 0101+1 = 0110=-6
+
+shift:
+
+Signed Shift and unsigned shift:
+
+>> --- right shift
+<< -- left shift
+
+In right shift, when a negative number is shifted, the sign has to be maintained, so a 1 is added, whereas in left shift, the sign is
+already preserved so a zero is added, in unsigned, a zero is added.
+
+
+In signed shift: the negative numbers, when shifted, a 1 is added,
+whereas for positive numbers, a 0 is added. Similarly in unsigned shift, only 0 zero is added
+
+

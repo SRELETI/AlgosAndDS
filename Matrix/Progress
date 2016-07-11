@@ -1,0 +1,45 @@
+Progress:
+
+1) Row wise and col wise matrix:
+
+Start from right top corner, row-0,col-colmax-1
+if(element=righttop, return it, else if element > righttop, then inc row, else dec col
+
+2) print given matrix in spiral form
+
+take row_min-0, col_min-0, row_max-row.length-1, col_max-col.length-1,
+while(row_min<row_max and col_min<col_max), in first for loop, print the first row and inc row_min, then in second loop
+print the last col, and dec col_max, then now check the while cond again and run a loop to print the last row and dec row_max
+then run loop to print the first col and incr the col_min
+
+3) Boolean matrix, make all rows and cols 1 if there is a one in any of the row or col
+
+take two one dimensional matrixes, then run a loop over the matrix, if mat[i][j]==1, then set row[i]=col[j]=1, then now run again a 
+loop over the matrix, if row[i] or col[j]==1, then set mat[i][j]=1. this is the resultant array
+
+4) Unique rows in a matrix, print unique rows in a boolean array.
+
+First print the first row, because it is allows unique, as there is no rows before it to compare, then run a loop from row=1
+inside it run a loop from row-1 to 0, set count=0 , inside it run a loop over col frm 0 to col.length, then check if arr[row_inside][col]==
+arr[row_outside][col]), incr count if equal, after coming out of the loop, check if count==col.length, which means the row inside is same 
+as row above it, break the loop, then if u come out of row_inside loop without breaking,then it is distinct row, print it 
+
+5) max size square sub matrix with all 1's
+
+create a new array of sam size, run a loop over the arrray to populate values, if old_array has 1 at a index, then new array
+should be populated with the min of i-1 j, i j-1, i-1 j-1 +1, else 0, 
+now run another loop over the new aray to find the max?_Value in the array which is nothing but the max_size of suba array, store 
+maxsize and also the indexes. then run a loop from max_i and max_j to max_i-maxsize, max_j-maxsize, which will give the maxsub array
+
+6) Inplace M*N size matrix transpose -----------------------TODO
+7) Print Matrix diagonally  -------------------------------- TODO
+ 
+8) Maximum contignous sub array in 2d array ----------------------- TODO
+9) Matrix multiplcation --------------------------- TODO 
+
+10) create array of alternating rectangles of O and X
+	Same as the spiral matrix, set row_min=0, col_min=0, row_max=m, col_max=n, while(row_min<row_max && col_min < col_max)
+	first set first row, then inc row_min, then set last col and dec col_mac, then set last row and dec row_max, then set col_min and dec col_min
+	now set assign value='O' if it is 'x' or to 'X' if it 'o' and run again so that the elements are inserted accordingly
+	  
+

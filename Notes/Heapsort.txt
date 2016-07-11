@@ -1,0 +1,97 @@
+Heap:
+
+Heap is a tree based data structure which satisfies the heap property. The parent node is
+always greater or equal to its child nodes and same property holds all over the tree except the
+root node. this is  max heap. similarly min heap
+
+
+
+Binary Heap:
+
+Binary heap is a heap data structure created using a binary tree(complete binary tree)
+
+In Binary heap, if there are 'n' nodes in a tree, then the height of the tree will be 'logn'
+where height is measured from bottom.
+
+All basic operations in heap are propotional to the height and performed in 'logn' time
+
+
+THe heap can be implemented easily and efficently using a array(dynamic array- So arraylist)
+
+The basic operations in heap include
+
+insert, delete----- this take O(logn) time only.
+insert and delete internally calls the build_heap function and builds a heap from the input
+
+
+
+
+IN ALL CASES, BEST WORST AVERAGE, the same amount of time 'O(nlogn)'
+
+
+FUNCTIONS TO MAINTAIN HEAP PROPERTY:
+
+Build_heap(arr)
+
+The heap property at root will be satisfied only if its child satisifes the property,
+
+So building the heap should start from the bottom.But as the leaf nodes have no childs,
+so they already satisfy the heap property.
+
+So building th heap should start from the non leaf nodes, which exactly starts from 'n/2-1'
+
+Takes O(nlogn)
+
+Keyword:
+
+BH
+
+Bottom, Half
+
+
+Logic:
+
+run loop from n/2-1 to 0.
+
+call max_heapify in each call
+
+max_heapify(arr,index,length)
+
+CP:
+
+Child , Parent
+
+Logic:
+
+For each index, find childs
+
+check if childs greateer than parent 
+
+if so replace
+
+HEAP_SORT:
+
+for heap_sort this is where everything will start
+
+it will call build_heap which calls max_heapify and build a max_heap for input array.
+
+Then 
+
+for sorting
+
+swap root element with last element.
+Then decrease the length of the array.
+
+KEyword:
+SL
+
+swap, length
+
+Logic:
+
+Call build_heap,
+run loop from last_element to second element
+swap last element and root element, then decrease the size of the arr
+
+Takes O(nlogn) time
+

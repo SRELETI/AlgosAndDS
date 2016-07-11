@@ -1,0 +1,8 @@
+
+
+Chapter 3: Left out, only studied Asymptotic notations
+
+Chapter 4: from 4.3: solving recursions, worked on max subarray and multiplication problems
+
+Chapter 5- randomized algorithms to learn
+

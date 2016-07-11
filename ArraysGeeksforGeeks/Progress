@@ -1,0 +1,434 @@
+1) First Problem:
+
+SUmpairs for given sum:
+
+bruteforce,
+sorting and boundaries start
+
+hash map-----TODO
+
+
+2) Majority Element
+
+bruteforce
+
+BST------- TODO
+
+Moore's Algorithm
+
+slight modification: Given 2n elements in array, n elements same and remaining different, find the element which is repeated n times
+
+3) Odd number of times element, all others even number
+
+XOR:
+
+4) LARGEST CONTIGUOUS ARRAY:
+
+Kadane Algorithm
+
+optimized kadane algorithm start with zeroth element rather than 0
+
+for indexes of start and end, pit if conditions
+
+for largest product, modifying the kadane algo
+
+
+5) Missing Number:
+
+No of elements is n-1, In series of number from 1 to n, one number missing
+
+use: SUM of elements
+Use: XOR, xor for all elements from 1ton, xor for all elements in array, so finally xor x1 and x2
+
+6) find an element in sorted and pivoted or rotated array in o(logn)
+
+need not to find pivot element, find mid, compare with left and right
+to find pivot element, is same as finding smallest element in the array, find mid compare with right most element
+
+7) Merge one array of n into another array of m+n
+
+m+n first array size, m elements filled, n second array size, n elements filled, now merge by sorting both arrays.
+first move all elements to last in first array using remove duplicates method. then merge both arrays by comparing
+
+8) Median of a sorted array of size 2n formed by combining two arrays of size n  each
+TODO----------------
+
+9) reverse a array
+
+Using the array last and first elements
+
+swap the first and last elements until start<end by incrementing start and decreasing end
+also recursive
+
+10) Array Rotation:
+
+Third methods: first- use temp array
+second- rotate d number of times the array
+third- create gcd, create gcd no of sets and rotate in it
+fourth: reversal algorithm
+fifth: block swap----- TODO
+
+
+11) Max sum without adjacent elements
+
+sum incl previous element and excluding prev element, return max of both at last
+excl= excl, incl max
+incl=excl+arr[i]
+handles including negative numbers, but not all negative numbers
+
+12) Leaders Array
+
+brute force, run outer loop, inner loop form i+1 to n, check if arr[i]<=arr[j], then break, else if j==0, print it
+
+efficient solution: start from right, print right element, then check if next element greater than right element, if so print 
+and change max elemnt to present
+
+
+13) SORT ELEMENTS BY FREQUENCY SET1
+
+TODO-------------
+
+14) INVERSION COUNT
+
+TODO ------------------
+
+15) Two elements whose sum is close to zero 
+
+Brute force: runnin two loops, compute the sum for each comb and check if less than min_sum, return min elements and sum
+
+opt: sort and find sumpairs and check if less than min_summ, and also if sum is less than zero, increase start, or end--
+
+16) Smallest and Second smallest elements 
+
+set smallest and second as integer.max_value
+then run loop over the array, check if arr[i]<smallest, then set both, second=smallest, smallest=arr[i], if arr[i]<second only and not 
+equal to arr[i]!=smallest, then set seconf=arr[i],  return smallest and second 
+
+17) majority element in sorted array
+
+linear search, check if arr[i]=element and also arr[i+n/2]==element, then return true
+Binary search, search for first occurence of the element. base case fail:if start>end, win case middle==0 || arr[middle-1]<element &&
+arr[middle]==element] else if arr[middle]<element, start=middle+1, else
+
+July 7th
+
+18) maximum and minimum element in array
+
+normal method: set first two elements to min and max accordingly. Then run loop from 2 to n, check if that element is less than min
+and also check if element is greater than max. update min or max accordingly
+counting pairs: n=even, first two elements, i=2, n=odd, first element, i=1, i<n-1, arr[i] and arr[i+1] compare
+
+No of comparisons: normal methhod: 1(set first two elements)+ 2(n-2)(loop rotation,each loop two conditions), best case 1+(n-2)- increasing array
+No of comparisons: even:1+3(n-2)/2, odd 3(n-1)/2
+
+19) Segregate 0's and 1's
+
+First method: use the method used for handling duplicates or moving elements to end and push all the zeros to front, then start
+end of zeros and populate the remaining places with 1's. BUT THIS METHOD USES TWO ITERATIONS OVER THE ARRAY< THIS HAS TO BE DONE IN ONLY ONE
+
+Second method: Use two indexes, start and end, while start<end, check if arr[start]=0 and less than end, then start++,
+if end=1 and greater than start, end--  if(arr[start]>arr[end])swap and left++ and right--
+
+20) k largest or smallest numbers in a array
+
+use bubble sort, run outer loop k times.
+or sort the array and return the first k elements
+
+TODO-------------------- MINHEAP, MAXHEAP, ORDER STATISTICS-QUICKSORT
+
+21) Max size sqaure sub array with all 1's
+
+Concept: create a array which stores information about the size and location of the subarray.
+this can be found by checking the elements in the main array and updating the sub array. then find the max element in the array
+which is the size of subarray, and the coordinates are the right and bottom most indexes of the sub array.
+
+22) max diff between two elements such that largest element appears after the smaller number
+
+simple:
+
+max_diff: always diff is max if largest element is second element
+set max_diff =arr[1]-arr[0]
+for loop from 0to arr.length
+for loop from i+1 to arr.length
+check if arr[j]-arr[i]>max_diff
+then set max_diff
+return max_diff
+
+Efficient:
+keep track of smallest_element, this will help us to find max_diff, because at each index, u are sub against the smallest u get max_diff
+max_diff=arr[1]-arr[0]
+smallest=arr[0]
+for 1 to arr.length
+  if(arr[i]-smallest>max_diff
+    set max_diff
+  if(arr[i]<smallest)
+   set smallest
+   
+   return max_diff
+   
+ 23) Union and intersection of two arrays
+ 
+ Union: take indexes i and j, take length of two arrays. while(i<n && j<m) check if arr1[i]<arr2[j], then print and inc
+ similarly if arr2[j]<arr1[i], then print and inc, if equals, print anyone and incre both. atlast check if any elements remaining 
+ in both and print them
+ Intersection: take two indexes, if arr1[i]<arr2[j], then inc, sim if(arr2[j]<arr1[i]), then inc, if both are equal, then print and inc
+ 
+ 
+ 24) Floor and Ceiling 
+ 
+ Linear method: run loop over the array, check if x is element, then return element, or else if x is greater than element and less than or equalarr[i+1] 
+ Binarysearch method: before eliminate edge cases, find middle, check if x is middle, return. else check if x<middle, then two cond, else two condi
+ 
+ 25) products array.
+ 
+ create three arrays, left and right and prod
+ initally, left[0]=1. right[arr.length-1]=1
+  left calculates prod of each element whose left side elements are only considered. 
+ right caclulates right side prod
+ prod is obtained by multiplying left and right
+ 
+ 26) Segregate Even and odd numbers
+ 
+ loop with two indexes left and right
+ if left==even left++. right=odd right--
+ if(arr[left] not even and arr[right] not odd) then swap and inc
+ 
+ 27) FIND TWO REPEATING ELEMENTS in a given array ------------ 
+ 
+ Bruteforce - run two loops check if arr[i]==arr[j], if so then print the element
+ count array --- create a count array of size input array, then run a loop chcking if count[arr[i]]==1, then print, or else, then inc count
+ abs method: run a loop, and chcek if arr[abs(arr[i])]>0, then set it to negative, then else which means its already negative, just print 
+ the array element
+ 
+ 28) Sort an array of 0's, 1's and 2's -------------------
+ 
+ Take three pointers: low=0, mid=0;high=length-1
+ u have to check if mid is 0,1,2: if 0 then swap low and mid, inc low and mid, if mid=1, then mid++, if mid=2, then swap mid and high, inc high
+ not inc mid because, the traversing from right is not done, so u may come across 0's and 1's.
+ Inc low, because if swapped, then zero is in correct position
+  
+ 
+29) Min length unsorted Subarray which when sorted makes complete sorted array
+
+first find element from start which is less than previous element
+then find element from last which is greater than previous element
+then find the min and max element in between the start and last element
+and then check if any element is greater than min element from start to s, if sp update s
+similarly check if any element is less than max from end to e , if so update e
+
+30) repeating elements or duplicates in the array in O(n) time and O(1) space
+
+Same as two repeating elements in an array
+run loop over array, check if arr[math.abs(Arr[i])]>=0, then negative it, else print it
+
+31) Equilibrium Index: 
+
+brute force: run  a loop over array, then in that run another loop from 0 to i, which give the leftsum, then run another
+loop from i+1 to n, this gives the rightsum, then check if left equal to right
+
+efficient:
+Run a loop to find the sum of the array, then run another loop and decrease the sum, which gives the rightsum check if rightsum
+equal to leftsum, then increament left sum
+
+32) Selection sort algorithm makes the least number of writes
+
+33) Turn an image by 90
+create an dest array of the size opposite to given array, then copy the first row of the source array to last column of dest array
+
+34) Search in row wise and column wise sorted array:
+
+Set i=0, j=n-1;
+while(i<=j) check if arr[i][j]==element, if so then return, else if arr[i][j]>element, decrease j--, or else increase i++
+
+35) Next Greater element
+brute force method: Run a loop over the array, now in the second loop, check if arr[j]>arr[i], if so print and break the loop
+Using stack: push first element to stack, then run loop from second element, set next=arr[i], then check if stack is empty
+if not, then pop an element and check if that element is less than next, and print, keep doing this until the stack is empty. if element>
+next, then push element into stack, then atlast after the if(stack is empty) push the next into the stack. finally after the for loop
+check if stack is not empty, if so then print the element with greater element as -1.
+
+36) Check if array elements are consecutive
+
+Sorting:sort the array and check if differenc between the elements not equal, if so return false. else return true
+Visited array: two conditions to satisfy, one check if max-min+1=n (no of elemets), second, if all elements are disinct
+find the max, min first, check if max-min+1=n, then create a visited array, run a loop over the array, check if visited[arr[i]-min]==true
+if so that element is repeating, return false, set visited[arr[i]]==true
+check at the end of the loop and return true. if cond is not satisified then return false
+
+37) Missing number in a series from 0 to m-1, where size is n m>n
+
+first) check if arr[0]==0, else return 0, then run a loop from 1 to n, check if arr[i]-arr[i-1]==1, if not return arr[i-1]+1
+similarly also there is a method with same loop but diff cond inside the loop, check if arr[i]==i, if not arr[i-1]+1
+
+efficient: binary search: 
+two border cases: first first element, second last element, which comes only when start> end, in this case return end+1
+middle=left+roght, arr[middle]>middle, then target in left array, return rr(arr,start,mid), else target in right array, return rr(arr,middle+1,end);
+
+38) count number of occurences in sorted array
+
+Simple: run a loop and check if each element equal to x, then inc count
+binary search: find the start point of the repeating element, similarly find the ending point of the repeating element, then return
+max-min+1;
+
+39)Given array, find max j-i, such that arr[j]>arr[i]
+
+Simple: run a loop, then run inner loop, check if arr[j]>arr[i], if so check j-i, greater than max_sum, finally return max_sum
+
+efficient: create lmin and rmax two arrays, for each element find lmin starting from 0. for each element fin rmax starting from end
+then while i<arr.length && j,arr.length, check if arr[j]>arr[i], if so, then check if j-1 > max_xum, if so update
+
+40)Interpolation search ---TODO
+
+41) Maximum element in each subarray of size k ---TODO
+brute force---done
+
+42) whether array subset of another array.
+
+simple: run loop over subarry, then inner loop over big array, then check if arr[i]==arr[j] if so break, if j==m, then the element not 
+present in main array, return false
+
+efficient: sort the main array, then run a loop over the subarray and check for the element using sorting
+
+Another method pending ------ HASHMAP
+
+43) Minimum distance between two numbers
+
+Simple: run two loops check if array[i]==array[j] and j-i<min_dis, then update min_dis
+
+efficient: run a loop over the array until u find x or y, set prev= i
+then run a loop form i+1 to end and check if j==x or y, if equal,check if it is equal to prev[i] and j-prev<min_dist, then update 
+min_dist, update prev=j;
+
+44) Repeating and missing elements:
+
+Simple: Sort the array, the run loop, check if arr[i]-arr[i-1]==0, then repeating, if arr[i]-arr[i-1]!=1, then missing, return i+1;
+efficent: use count array, count array gives repeated element, index of count array which is greater than zero, gives the missing element
+efficient: update the same array, similar to count array
+
+45) Spiral array:
+Create two indexes r and c
+calculate row.length and col.length. 
+repeat steps until r<row.length c<col.length,  run loop from row=r, col=l to col.length-1.print elements. then increment r, becuase first
+row is no more available, then run a loop from row=r to row.length-1, print arr[i][col.length-1]. then decrement col.length, as last 
+column is no more available. then as col.length and r are changed, check if r<row.length, if so run a loop from col.elngth-1 to =c, print 
+arr[row.length-1][i], decrement row.length as last row not availble, then cheeck if l<col.elnth, if so i=row.length-1 to =r, print and inc l
+
+46) Boolean Matrix
+
+Create two temporary arrays, one of arr length, the other of length arr[0]
+then parse over the input array, check if arr[i][j]==1, if so then set row[i]=1,col[j]=1
+then again run a loop over the input array, then check if row[i]=1 or col[i]=1, if so then update arr[i][j]=1;
+
+47) median of stream of integers
+
+Take the elements in a arraylist sort the elements using the insertion sort as it doesnt depend on the incoming elements and the list 
+is sorted , then after sorting, check if no of elements=odd, then print the middle element as median, else print the avg of middle-1 and middle element
+
+AUGMENTED SELF BALANCED BINARY TREE AND HEAP -------------------------TODO
+
+48) Fixed point in an array 
+
+Array is sorted.
+Linear: run a loop over the array, check if arr[i]==i, if so then this is the fixed point in the array,return, if reached end without finding, then return -1
+Binary: if(start>end) return -1, middle find, if(arr[middle]==middle), then return middle, else if arr[middle]>middle ,end=middle-1
+else start=middle+1
+
+49) Max Length Biotonic array
+biotonic array needs two arrays left and right, left stores lengths of biotonic series for each element
+right array stores biotonic series for each element from right
+then the max biontic array is found by calculating left[i]+right[i]-1 for each index
+
+50) Max element increasing and then decreasing.
+
+linear search: run a loop check for the first element which is less than arr[i-1], then return that element
+Binary search: if length is 1, return element, if length is 2, return the greater element among both, then cal middle, check if 
+arr[middle] greater than both middle-1 and middle+1, then return middle, else check if arr[middle] greater than middle+1 but less than arr[middle-1] set end=middle-1
+else start=middle+1
+
+51) count smaller elements on right side
+
+Linear search: O(n), run two loops,check if arr[j]<arr[i], then inc count, come out of first loop and set count_arr[i]=count
+
+52) Minimum number of jumps to reach the end
+
+TODO-------------------------
+
+53) Implement two stacks using an array
+
+Two ways:
+divide array size into two parts arr[0] to arr[n/2], second arr[n/2]+1 to arr[n]
+use one for each stack, but problem with this is overflow, even if there is space in stack1, if the stack2 is full and u are inserting in stack 2, u will get stack full error
+efficient:
+in the same array, insert one stack from start, second stack from the end, array size is full only if no of ekements in 1 +2 =arr.length
+so in this array size is used efficiently
+
+first method can be used to implement k stacks by dividing array into k parts
+
+
+54) Find contigous subarray which sums to given sum
+
+simple: run two loops, check if curr_sum==sum, if so print the starting index which is i and last index ehich is j-1
+if no array till the end, then there is no such array
+efficient: 
+set curr_sum=arr[0], then calc start, which is=0
+then run a loop from 1 to n, then run  a loop to check if curr_sum>sum and start<i-1, then remove the start element, increment start
+then check if sum==curr_sum, if so print start as starting index and i-1 as end index, then if this is not true, at last add present 
+element to the curr_sum. this algo takes o(2n), not o(n2), because, overall at worst the number of operations are multiple of 2n,
+on each element, only at max 2 operations are performed
+
+55) DP Set 14 and longest monotincally increasing subsequence size ----------------- TODO
+
+56) Find a triplet in an array whose sum is equal to given sum
+
+Simple: takes three loops to check the sum of triplet, one each for each index
+efficient: do sorting, then run a loop for first index, then do binary search for the remaining two indexes
+
+57) smallest positive number missing from unsorted array
+First approach: Run  a loop over the positive number, then in the inner loop check if i=arr[i], means the number is positive, if that 
+number is not there, then that is the missing number
+
+Second Approach: Sort the array, now run a loop from start to end, at each index check  if that index>1 and index-1>=0 and arr[i]-arr[i-1]!=1
+then return arr[i-1]+1, else if check if index>1 and index-1<0 and arr[i]-arr[i-1]!=1, then the missing number is 1
+at last if all the number are consecutive, then return arr[arr.length-1]+1 
+
+Third Approach: HASHING----------------TODO 
+
+Fourth aproach: combine segregate technique (move all elements one side)  and repeating techniquw or duplciates( use array index) to change the values of all the 
+array elements. then run a loop and find the first index which is positive and return the index+1 of that element
+
+
+58) Find numbers with odd occurences
+
+simple: run a loop and in the inner loop check if the number is occuring odd number of times by running the counter, print if odd number of times
+sorting: Sort the array and run a linear search to find the odd occ elements by and also take care of boundary cases, lot of if conditiond
+
+HASHING------------TODO
+
+O(n) method: USES XOR
+run a loop to find the xor of all the elements in the array, it will nullify all the elements occuring even no  of times, then we ar eleft
+with elements occuring odd number of times. 
+now in this xor, a 1 indicates that the elements are having different bits at that particular position. so now check
+for one such bit, run a loop to find the rightmost significant set bit. xor & ~(XOR-1), now run a loop over the array and check & of 
+arr[i] and setbit, if set move to one list, else move to another set, each set will have one odd element
+
+
+59) CELEBRITY PROBELM ------------ TODO
+60) Longest Biotonic subsequence ----- TODO
+
+61) Sorted Subarray of size 3 with arr[i]<arr[j]<arr[k] where i<j<k
+create two arrays, one array for finding the smallest element on left side for each index, store the index, then another array for finding largest
+element for index on right side. after finding this, run a loop and for each index, check if left[index]!=-1 and right[index]!=-1
+then print arr[left[index]] arr[i] and arr[right[index]].
+
+For finding arr[i]<arr[j]>arr[k], just change the second array, store the index for each element on the right side of that particular array
+for finding arr[i]<arr[j]<arr[k]<arr[l], same for two arrays, in the last loop, take two indexes, left=1; and right=arr.length-2
+and check if left[left]!=-1 and right[right]!=-1 and arr[left]<arr[right] then print, else check if left[left]==-1 or arr[left]>arr[right], then inc left,
+if right[right]==-1, then inc right.
+
+
+
+
+
+
+
+

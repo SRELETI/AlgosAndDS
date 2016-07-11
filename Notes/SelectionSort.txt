@@ -1,0 +1,17 @@
+Selection Sort:
+
+Keyword: SSMLS
+
+S-selection S-smallest, M-min, L-last S-swap
+
+Logic:
+
+First rum loop from 0 to last element-1.
+set first index=min
+then run second loop from first loop+1 to length
+if jth element less than ith element, then min=jth index
+and at last after the completion of first loop, swap ith and minth index elements
+iN THAT way, after every iteration, u will get smallest element
+
+Running time: O(n2)
+

@@ -1,0 +1,103 @@
+Four methods to solve:
+
+Brute force : O(n3)
+Reuse Data:  O(n2)
+Divide and Conquer: O(nlogn)
+Kadane algorithm: O(n)
+
+
+
+Common for three methods:
+
+Vmax and v.
+
+
+Brute force:
+
+THree loops:
+
+Keyword:
+
+W3i+i2
+
+W3- three for loops,
+i+ - first loop with i, second loop starting from i
+i2 - third loop from i 2 j.
+
+Logic:
+
+Set Vmax=Interger.MINVALUE
+Then run first loop over all elements, second loop from i to n
+Set v=0,
+run third loop from i to j.
+then add v=v+arr[x]
+check if v>Vmax, if so replace Vmax with v.
+
+Modified: Reuse data
+
+Keyword: 
+
+W2i+
+
+w2-two loops.
+i+- first loop with i, second loop starting from i.
+
+
+Logic:
+
+Set Vmax=0;
+Run first loop from 0 to n, 
+set v=0
+second from i
+add v=v+arr[j];
+check if v>Vmax, replace if so
+
+
+Divide and Conquer:
+
+Keyword:
+
+M2LRM
+
+M2- Two max functions, L-Left, R-right, Middle
+
+
+Logic:
+
+Two max functions, one each for two and three elements
+
+Then a function for max_crossing_subarray
+
+find sum from middle to left hand side and similarly find sum on right hand side.
+return sum of both
+
+then a function to find the max_subarray on either side.
+
+it is recursive function.
+
+base case: if left==right
+find middle
+then return max of left subarray, right subarray, crossing subarray
+
+
+
+Kadane algoirthm
+
+
+Keyword: M2L
+
+M2- Two variables max_so_far, max_ending_here, L- less than zero.
+
+Logic:
+
+Max_so_far, max_ending_here=0
+
+run a loop from 0 to n
+
+max_ending_here=max_ending_here+arr[i];
+check if max_ending_here<0, if so set=0
+check if max_ending_here>max_so_far, if so set max_so_far=max_ending_here
+
+
+
+

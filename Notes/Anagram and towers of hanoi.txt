@@ -1,0 +1,80 @@
+Anagram:
+
+finding all the combinations of a word:
+
+three steps:
+
+anagram top n-1 characters in the word
+rotate all the n characters in the word
+repeat this for n times
+
+
+n3
+
+
+Logic:
+
+
+if(top==1)
+ return
+for(int i=0;i<top;i++)
+ anagram(top-1);
+ if(top==2)
+   display()
+ rotate(top)
+
+
+Time Complexity: o(n * n!) o(n)-for loop and n! for anagramming
+
+
+In dictionary, find all words which are anagrams of each other
+
+example:
+
+dict={'abc','sac','bca','cas','xyz'}
+
+logic:
+
+create a hastable;
+
+run loop over the length of dict
+  sort each element using a sorting tech
+    if(hashtable.has_key[sorted_element])
+      then
+          list=hashtable[sorted_element]
+          list.append(each element)
+           hashtable[sorted_element]=list
+    else
+        new_list=each_element
+        hashtable[sorted_element]=new_list;
+ 
+
+
+
+
+towers of hanoi:
+
+
+three pegs or towers, move disks from one tower to last one
+
+
+three steps:
+
+move topn-1 from source to intermediate
+then move top to dest
+then move topn-1 from inter to dest
+
+
+if(top==1)
+System("disk" top "from" source "to" dest)
+else
+ towers(topn-1,source,dest,inter);
+ system("disk" top "from"source "to" dest);
+ towers(topn-1,inter,source,dest);
+
+
+
+Time Complexity: t(n)= t(n-1)+t(1)+t(n-1)
+                     = 2t(n-1)
+                     =2powern
+

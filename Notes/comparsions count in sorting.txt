@@ -1,0 +1,37 @@
+Count of no of comparsions and swaps or copies:
+
+
+Bubble Sort:
+
+Worst case: Reverse sorted
+
+Comparsions count : N(N-1)/2
+
+Swaps Count: N(N-1)/2;
+
+Selection Sort:
+
+Worstcase: reverse sorted
+
+Comaprsions count: N(n-1)/2
+
+Swaps count: N
+
+
+Insertion Sort:
+
+Worstcase: Reverse sorted
+
+comparsions count: N(n-1)/2
+
+copies Count: more than n(n-1)/2
+
+
+but as swaps=3*copies, so copies is more efficient
+
+If array is almost sorted, then Insertion sort is best, because only comparsions are done 
+and few copies are done which are not very costly
+
+ 
+
+ 

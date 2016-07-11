@@ -1,0 +1,28 @@
+Parsing Arthemtic 
+
+Two Stage:
+
+First convert infix to postfix
+second evaluate postfix
+
+first step:
+
+FES()+-*/op
+
+Logic:
+
+run loop for each element
+then switch on that particular element
+then cases start
+each handles one of the scenario atlast if there are any elements, write them to the output
+
+then step 2:
+
+same FE 
+check if the char is operand, thenn push it to the stack.
+
+if the char is an operator, then pop two elements from the stack, then switch to perform operations
+and push the result back to the stack.
+
+
+

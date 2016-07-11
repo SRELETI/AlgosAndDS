@@ -1,0 +1,12 @@
+In Place Sorting Algorithms:
+
+In place, using constant amount of extrra space to do the sorting
+
+Insertion Sort: In place, it just uses key
+Merge Sort: Not In place, it creates two arrays each of size n/2, which varies with size of input
+Selection Sort: In Place, it just uses min
+Bubble Sort: In Place, it just uses temp
+HeapSort: IN place,
+QuickSort: In place
+
+

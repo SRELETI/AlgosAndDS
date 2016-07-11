@@ -1,0 +1,35 @@
+PowerSet of a set can be found in two ways
+
+one is using recursion which takes exponential time O(2^n)
+the other is iterative method which takes O(n2^n)
+
+coming to the iterative method:
+
+ppba:
+
+P-powerset, p-power, b-binary, a-add
+
+
+given an input set
+
+create a double set and then calculate length of original set and then calculate power of it. 
+then run a loop over the power and then calculate the binary value of that index and then create a new list
+and run loop over binary string length and check if 1 then insert into list and finally after the for loop
+add it to powerset
+
+
+
+Coming to the recursive approach:
+
+pbd:
+
+given input set
+
+create powerset
+base case check if original set is empty, if so create a emptty set and add it to powerset and return 
+
+if not,
+create a duplicate set of original set, then extract top element and then create a list of remaining elements
+then run  a loop over powerset of rest elements, then create a list and add head and set and then add the list to 
+powerset and add set also to powerset
+

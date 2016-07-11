@@ -1,0 +1,28 @@
+Stack:
+
+Abstract data type. It is just a conceptual aid, not a datatype like arrays.
+
+More abstract: use cant say that a stack is implemented using an array or linkedlist, it hides the 
+implementation details
+
+More restrictive:
+
+The stack is more restrictive compared to an array, as only topmost element can be accessed
+
+
+Stack:
+
+push
+pop
+isEmpty()
+isFull()
+
+all constant amount of time
+
+used for :
+
+string reverse
+delimiters matching 
+parsing arthimetic expressions
+
+

@@ -1,0 +1,36 @@
+Remove duplicates can be done in two ways:
+
+First way: O(n2)
+
+outer loop to loop over the elements
+inner loop to check whether the elements are duplicate by comparing with the outer index, if so
+set them to some value and then at last delete all this values
+
+
+
+Keyword: IJNA
+
+I- i index, J- j index, N- notequal, A- assign
+
+Second way: Efficient way: o(n)
+
+Take two indices:
+
+i=0;
+j=1;
+run a loop from j=1 to n
+check if arr[j]!=arr[i]
+if so i++, arr[i]=arr[j]
+do the same for the complete array, then return the (i+1) which is the length of the array
+without duplicates.
+
+remove elements from the i+1 th to last element, which is ur array without duplicates
+
+
+
+For an UNSORTED ARRAY:
+
+First sort the array, then apply the second method.
+
+As sorting takes O(nlogn)(quicksort), so removing duplicates which takes O(n) completely takes O(nlogn)
+

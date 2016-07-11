@@ -1,0 +1,26 @@
+Horner Rule
+
+Running time O(n)
+
+For evaluating a polynomial 
+
+Keyword:
+
+HRIHX
+
+H-horner, R- rule , I- increasing array, H-Highes index, X- result with x
+
+
+Logic:
+
+The Logic here is to evaluate the polynomial by substituting the value of x.
+
+So for that, store the value of highest index in result.
+
+Run a  loop from n-1 element to zero.
+
+Multiple the highest index with x and adding the next index.
+
+Do the same for all the indexes. By doing so u are making sure that the highest degree is multiplying
+with x degree number of times.
+

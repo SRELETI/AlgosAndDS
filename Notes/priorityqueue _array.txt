@@ -1,0 +1,29 @@
+Priority queue:
+
+just like queue, but rather than first inserted element, an element which has the top priority 
+is removed.
+
+two indexes required to implement it first and rear
+
+
+Insertion slow:
+
+for the remove operation to delete top element,
+the insertion has to take care that top element is highest priority element
+
+so insertion has to be done in sorted order with highest element at top.
+
+so inserted element has to be placed in the right position
+
+so it takes o(n) time
+
+deletion fast in this case.
+
+
+Reverse case;
+
+insertion fast
+
+then the deletion becomes slow, as it has to find highest element and then delete
+
+ 

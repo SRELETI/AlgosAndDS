@@ -1,0 +1,25 @@
+Odd even sort:
+
+One of the simplest sorting algorithms 
+
+It takes O(n2) running time
+
+
+Keyword:
+
+HJS:
+
+H-half, J- Jump, S- Swap
+
+
+Logic:
+
+run outer loop for n/2 elements
+
+two inner loops one each for odd and even elements
+
+for j=0 j+1<arr.length;j+=2
+ if(arr[j]>arr[j+1])
+   swap(arr[j],arr[j+1])
+similarly for j=1,j+1<arr.length;j+=2
+

@@ -1,0 +1,282 @@
+LinkedList deals with references not objects directly
+
+LinkedList deals with relationship between links but it doesnt bother abt the positions
+
+That is u cant search in linked list with the position of the element, the search has to be done 
+only at start element and keep asking other elements as it goes
+
+LinkedList used for implementing stack. fast insertion, deletion at first index.
+slow search o(n); slow insertion and deletion at any other place and even at end
+but fast compared to array becuase no moving of elements
+
+
+insertFirst():
+NewNode.next=first;
+first=newNode;
+
+deleteFirst():
+first=first.next;
+
+
+find(key):
+current=first;
+while(current!=null)
+if(current.data==key)
+
+
+delete(key):
+previous=null;
+current=first;
+while(current.data!=key)
+if(current.next==null)
+   return null;
+else
+   previous=current;
+   current=current.next;
+}
+if(previous==null)
+first=first.next;
+else
+previous.next=current.next;
+
+
+insertAfter(key):
+
+newNode1;
+current=first;
+while(current!=null)
+if(current.data==key)
+    newNode.next=curren.next;
+    current.next=newNode;
+    break;
+ current=current.next;
+
+
+Double-Ended Lists:
+
+similar to ordinary list but with reference to both first and last link
+
+MAIN ADVANTAGE: FAST INSERTION EVEN AT END. rather than inserting it at last by iterating till last
+
+But DELETION AT LAST element is not possible, because reference of next to last element cannot be obtained
+as it should point to last element,once the deletion of old last element is done
+
+
+This will help to implement the queue.
+
+
+Two links:
+first=null;
+lsat=null;
+
+look for border cases:
+
+insertFirst():
+if(isEmpty())
+   last=NewNode;
+newNode.next=first;
+first=newNode;
+
+insertLast():
+if(isEmpty())
+   first=newNode;
+else
+   last.next=newNode;
+last=newNode;
+
+deleteFirst():
+if(first.next==null)
+  last=null
+first=first.next;
+
+   
+LinkedList Efficiency:
+
+Insertion deletion at first o(1)
+
+insertion deletion at othe place  o(n), but no movement so fast
+ another advantage is linked list is not fixed in size
+
+
+Abstract Datatype:
+
+its a way of looking at the datastructure, focusing at what it does and not how it does
+
+Stack and queue are examples
+
+In detail abt ADT. first what is datatype, then we will look at Abstract
+
+datatype:
+
+datatype actually refers to two things, a data item with certain characteristics and permissible operations
+on it.
+for example, int, the data item include numbers between -2,147...to +2,147... and opertioans include
++,/,-,*
+
+with object oriented programming, we can create our own classes which can act as datatypes.
+A class includes, field(data), methods(operations) as a datatype
+
+so datastructures like stack and queue can be represented by class and they act like a abstract datatype
+stack like int also deals with certain arrangement of data and set of operations on that data
+
+Now coming to abstract:
+abstract means considered apart from detailed specification or implementation
+ 
+in oop, ADT is a class, whose implementation details are not considered. the description of data in class
+list of operations  are only considered
+the implemetation details of the methods are excluded
+
+
+Interface:
+
+An ADT specification is called interface. it's what a class user sees. so in stack, the interface is 
+push pop and some other methods.
+
+
+ADT list:
+
+A list is an aDT which can be implemented using the datastructures. 
+as an ADT is defined by its iterface. the methids used to interact with it. list support insertion of item
+deletion of item and finding an item
+
+a list is an ADT which can be implemented using various structures like arrays and linked lists
+
+
+ADT as design tool:
+
+when designing a software, if u need to store data, start by considering what kind off operations are 
+u going to perform on the data. u need acces to last element inserted? only first elemetn?
+answers to these questions lead to definition of an abtract type.
+then after the definiction of adt , then a structure has to be selected for implementing it
+
+if frequent operations are required then arrays are good, not linkedlist(for frequent insert)
+
+
+SORTED LIST:
+
+data is inserted in  a sorted order. and deletion and search can be done.
+
+if deletion is only done at first element, then it acts like a priority queue
+
+
+sortedinsert(key):
+
+current=first;
+previous=null;
+newNode
+while(current!=null && key>current.data)
+   previous=current
+   current=current.next;
+
+if(previous==null)
+    first=newNode;
+else
+    previous.next=newNode;
+newNode.next=current;
+
+
+
+Doubly LinkedList:
+
+Main ADVATANGE: backward traversal is possible in doublylinkedlist
+
+
+next, prev two links
+
+
+Traversal:
+
+traverseBackward():
+
+current=last;
+while(current!=null)
+current.display()
+current=current.prev
+
+
+traverseForward():
+
+current=first;
+while(current!=null)
+current.display()
+current=current.next;
+
+
+Insertion:
+
+insertionFirst():
+
+newNode;
+if(isempty())
+last=newNode;
+else
+first.prev=newNode;
+
+newNode.next=first;
+first=newNode
+
+
+insertionLast():
+newNode;
+if(isempty())
+ first=newNode;
+ 
+else
+ newNode.prev=last;
+last.next=newNode;
+last=NewNode;
+
+
+insertionAfter():
+newNode;
+while(current!=key)
+current=current.next;
+
+if(current==last)
+  current.next=newNode;
+  newNode.prev=current;
+  newNode.next=null
+  last=newNode;
+else
+  newNode.next=current.next;
+  current.next.prev=newNode;
+  newNode.prev=current;
+  current.next=newNode;
+
+
+deleteFirst():
+if(first.next==null)
+ last=null;
+else
+  first.next.prev=null;
+first=first.next;
+
+
+deletelast():
+
+if(last.prev==null)
+  first==null
+  last=lat.prev
+else
+  last=last.prev;
+  last.next=null;
+
+
+deletekey()
+while(current!=key)
+  if(current.next==null)
+   return null;
+  current=current.next;
+if(current==first)
+  first=first.next;
+  first.prev=null
+if(current==last)
+  last=current.prev;
+  last.next=null
+else
+  current.prev.next=current.next;
+  current.next.prev=current.prev
+
+
+THey CAN BE USED TO IMPLEMENT DEQUE
+

@@ -1,0 +1,35 @@
+Running time:
+
+O(nlogn)
+
+Keyword: MDLCW
+
+M-merge, D-divide and conquer (three steps-divide, conquer, combine), L-length(base case), c-copy, 
+W- while loops
+
+Logic:
+
+Two sub routines: one merge_sort, merge
+
+merge_sort:
+
+base case: length of array <=1 return arr
+then create two arrays with required sizes, 
+copy values into new arrays.
+then call functions.
+
+merge:
+run while loop check if less than length of two arrays. copy smaller one of two array into result arr
+then once exited from while loop, copy remaining elements in the array.
+
+
+Same running time in all cases
+
+
+
+Merge Sort modification:
+
+use insertion sort in the merge sort.
+
+This can be done replacing the base case with insertion sort when the arr.length goes below some threshold.
+

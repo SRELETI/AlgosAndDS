@@ -1,0 +1,11 @@
+progress:
+
+1) Check if a number is multiple of 3:
+
+first: u can use % modulus operator to check it, n%3
+second: u can sum the digits in the number, if the sum is a multiple of 3, then the number is a multiple of 3
+third: use the binary representation, count of no of set bits and odd and even position, if their diff is zero, then the number is multiple
+
+takes o(logn) time because, the number of bits are logn of the number. and also at each step u are eliminating two binary digits.
+
+2) Efficient way to multiply a number by 7:

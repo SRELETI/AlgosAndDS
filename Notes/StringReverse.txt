@@ -1,0 +1,19 @@
+String reverse:
+
+Running time: O(n)
+
+Keyword:
+
+PP
+
+P-PushLoop , P-PopLoop
+
+Logic:
+
+string is passed as arguement, then 
+
+run a loop for the length the string, insert all the chars in the string into a stack one by one,
+Then run a second loop and pop all the elements from the stack into a String and 
+display the string.
+
+This is ur reversed string

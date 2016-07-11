@@ -1,0 +1,24 @@
+Running Time
+
+O(n2)
+
+Keyword:
+
+BDIS
+
+B-bubble, D-traDitional, I- I in the second loop, S- swap at every step
+
+Also finding largest element at each iteration.
+
+Logic:
+
+
+Running a loop over the array.
+
+Then run an inner loop from 1 to arr.length-i
+
+then check j-1 > j th element, if so then swap.
+
+By doing so, u r finding the largest element at each iteration.
+
+

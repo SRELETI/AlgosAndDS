@@ -1,0 +1,24 @@
+Running time:
+
+O(n2)
+
+Keyword:
+
+RIBIRIs
+
+R-recursive, I- Insertion, B-base, I-index, R-return, I- Indexes
+
+Logic:
+
+Replace outer loop with recursive calls.
+TO achieve the loop functionality, the recursive call is called with highest index as parameter and the value of the parameter 
+is decreased gradually in each call. 
+
+Base case is when index is less than or equal to 1. just return the index in that case.
+Then cal the function repeatedly. 
+same functionality and at last return index+1.
+
+Insertion sort running time cannot be improved even if the  binary search is used in the inner loop.
+
+in the inner loop, each element is moved towards right to place the present element in the correct place. In Binary search
+the correct position is found directly but, even however each element should be pushed to the right. so same thing.

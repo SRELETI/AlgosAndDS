@@ -1,0 +1,35 @@
+Queue is first in first out data structure
+
+similar to stack it is a conceptual aid
+
+queue are implemented using two indexs front and rear, as insertion is done from one end
+and deletion is done from another end
+
+There is a problem with queue, 
+
+for example, say 5 elements are inserted and 4 are deleted, the total size of queue is 5, even though
+four elements are deleted, the insertion is not allowed here, as the rear is already at length of the queue
+
+This type of queues are normal queues.
+
+To avoid this, a wraparound has to be done, so that when rear is at end and there are open places
+at the begining, thenn the rear has to be shifted to the front.
+
+This is called circular queue.
+
+In this kind of queues, the no of elements is very useful to solve many problems
+
+
+There is another type of queue called deque, which is called
+double ended queue, the insertion and deletion takes place from both sides
+
+insertFront(), insertRear(), deleteFront(), deleteRear()
+
+if same combination of insertion and deletion is taken, say for example insertFront(), deleteFront(), then
+it becomes a stack, so stacks can be implemented on the top of a deque
+
+
+similarly if alternate combination is taken, then it becomes a queue, so queues can be implemented on
+top of deque
+
+all operation takes O(1) time

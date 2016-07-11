@@ -1,0 +1,58 @@
+
+
+Priority Queue:
+
+Priority Queue just like the list or map is an abstract data type.
+
+Priority queue is similar to a queue, but rather than first in first out, here the element with high
+priority is removed first
+
+
+IT is an abstract concept which can be implemented using heap or a variety of methods. 
+Similarly list can be implemented using arrays, linked list and so on.
+
+Priority queues can implemented using arrays easily, but they are not efficient ways to implement it.
+
+For example, using a sorted array to implement a priority queue will take O(n) to insert and O(1) 
+for deletion.
+
+For example, if unsorted array is used to implement, then for insertion O(1). For deletion O(n) time.
+
+IF u use a HEAP, then all the basic operations are performed in constant time
+
+
+
+
+The basic operations are EXTRACT_MAX--- it removes and returns the max element from the priority queue
+INSERT_ELEMENT --- it inserts the element in the priority queue with associated priority
+
+
+FOUR FUNCTIONS:
+
+EACH TAKES O(logn) time.
+
+MAX_PRIORITY---- This returns the max_priority element in the list. THis function takes constant amount
+of time
+
+EXTRACT_MAX_PRIORITY ---- This function returns the max_priority element and also deletes it. So the last
+element is replaced with the deleted max_element. so the max_heapify function is called. Which takes 
+O(logn) time to execute
+
+
+HEAP_INCREASE_KEY ----  This function sets index=key, then runs a loop to check, if index >0 and 
+arr[index]> arr[parent], if so exchange and set index=parent_index. This function also takes O(logn) time
+In this function, the swap operation in the loop uses three assignments, this can be decreased to just
+one using the same loop that is used in the insertion sort
+
+
+
+
+HEAP_INSERT ---- Here u have to increase the length of the array, set new element=Integer.MIN_VALUE.
+Then call the HEAP_INCREASE_KEY with the key as new value.
+
+
+
+Implement the queue and stack using the priority queue. 
+
+
+

@@ -1,0 +1,60 @@
+Matrix multiplication:
+
+
+Brute force method:
+
+O(n3)
+
+3 loops for three indices
+
+Keyword: ijk
+
+
+i-first loop, j-second loop, k-third loop
+
+
+Logic:
+
+First loop, second loop from 0 to n
+then Cij=0;
+then third loop k=0 to n
+
+Cij=Cij+Aik*Bkj
+
+
+
+
+Straseen Algorithm:
+
+O(n2.7)
+
+
+Keyword: ASMSJ
+
+
+A-add, S-sub, M-multiply, S-spilt, J-join
+
+Logic:
+
+Add, sub function
+
+mutliply- divide and conquer method
+
+base case= length of arr is 1
+
+R[0][0]=A[0][0]*B[0][0]
+return R
+
+Divide each input array into 4 equal parts, values in the divided array can be filled using
+split function
+
+then create  7 matrices, each doing some additions, sub, multiplications
+
+then create 4 arrays C11,C12,C21,C22 from it
+
+the join these 4 arrays into single array.
+
+C
+
+return C
+
